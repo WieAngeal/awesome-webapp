@@ -1,4 +1,2 @@
-awesome-python3-webapp
-======================
-
-A python webapp tutorial.
+#python webapp.
+第一个练习的python web项目。
