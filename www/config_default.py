@@ -10,11 +10,11 @@ __author__ = 'Michael Liao'
 configs = {
     'debug': True,
     'db': {
-        'host': '10.238.84.187',
+        'host': '192.168.8.132',
         'port': 3306,
-        'user': 'zabbix',
-        'password': 'zabbix',
-        'db': 'zabbix'
+        'user': 'root',
+        'password': '123456',
+        'db': 'wechat'
     },
     'session': {
         'secret': 'Awesome'
