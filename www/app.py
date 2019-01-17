@@ -114,8 +114,10 @@ def response_factory(app, handler):
                 resp = web.Response(body=app['__templating__'].get_template(template).render(**r).encode('utf-8'))
                 resp.content_type = 'text/html;charset=utf-8'
                 return resp
+
         if isinstance(r, int) and t >= 100 and t < 600:
             return web.Response(t)
+
         if isinstance(r, tuple) and len(r) == 2:
             t, m = r
             if isinstance(t, int) and t >= 100 and t < 600:
@@ -125,6 +127,7 @@ def response_factory(app, handler):
         resp.content_type = 'text/plain;charset=utf-8'
         return resp
     return response
+
 
 def datetime_filter(t):
     delta = int(time.time() - t)
@@ -139,6 +142,7 @@ def datetime_filter(t):
     dt = datetime.fromtimestamp(t)
     return u'%s年%s月%s日' % (dt.year, dt.month, dt.day)
 
+
 @asyncio.coroutine
 def init(loop):
     yield from orm.create_pool(loop=loop, **configs.db)
@@ -151,6 +155,7 @@ def init(loop):
     srv = yield from loop.create_server(app.make_handler(), str(configs.webserver), 9000)
     logging.info('server started at http://%s:9000...',str(configs.webserver))
     return srv
+
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(init(loop))
