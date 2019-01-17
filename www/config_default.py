@@ -16,7 +16,7 @@ configs = {
         'password': '123456',
         'db': 'wechat'
     },
-    'webserver':'127.0.0.1',
+    'webserver': '127.0.0.1',
     'session': {
         'secret': 'WieAngealGitHub'
     }
