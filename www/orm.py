@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 __author__ = 'weiyanzhang'
 
 import asyncio, logging
-
 import aiomysql
 
 def log(sql, args=()):

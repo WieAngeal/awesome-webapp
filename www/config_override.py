@@ -9,6 +9,7 @@ __author__ = 'weiyanzhang'
 
 configs = {
     'db': {
-        'host': '192.168.8.132'
-    }
+        'host': '192.168.8.133'
+    },
+    'webserver':'10.212.66.56'
 }
