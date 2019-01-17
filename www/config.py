@@ -27,6 +27,7 @@ class Dict(dict):
     def __setattr__(self, key, value):
         self[key] = value
 
+
 def merge(defaults, override):
     r = {}
     for k, v in defaults.items():
