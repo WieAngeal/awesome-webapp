@@ -8,19 +8,15 @@ async web application.
 '''
 
 import logging; logging.basicConfig(level=logging.INFO)
-
 import asyncio, os, json, time
 from datetime import datetime
-
 from aiohttp import web
 from jinja2 import Environment, FileSystemLoader
-
 from config import configs
-
 import orm
 from coroweb import add_routes, add_static
-
 from handlers import cookie2user, COOKIE_NAME
+
 
 def init_jinja2(app, **kw):
     logging.info('init jinja2...')
@@ -84,6 +80,7 @@ def data_factory(app, handler):
                 logging.info('request form: %s' % str(request.__data__))
         return (yield from handler(request))
     return parse_data
+
 
 @asyncio.coroutine
 def response_factory(app, handler):
