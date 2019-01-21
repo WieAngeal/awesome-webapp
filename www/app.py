@@ -48,6 +48,7 @@ def logger_factory(app, handler):
         return (yield from handler(request))
     return logger
 
+
 @asyncio.coroutine
 def auth_factory(app, handler):
     @asyncio.coroutine
@@ -66,6 +67,7 @@ def auth_factory(app, handler):
             return web.HTTPFound('/signin')
         return (yield from handler(request))
     return auth
+
 
 @asyncio.coroutine
 def data_factory(app, handler):
